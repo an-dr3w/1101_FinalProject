@@ -25,7 +25,8 @@ void numberBoard(int arr[3][3])
 
     for (i , i < 9; i++;) 
     {
-        if (x == 2) {
+        if (x == 2) 
+        {
             x = 0;
             y++;
         }
