@@ -18,6 +18,7 @@ int main()
 {
     int gameBoard[3][3], playerMove = 0, i = 0, counter = 0;
     string player1, player2;
+    bool winner = false;
     
     // Called function to number the game board 
     numberBoard(gameBoard);
