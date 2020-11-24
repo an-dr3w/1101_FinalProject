@@ -9,16 +9,19 @@ using namespace std;
 const int MAX_SIZE = 100;
 
 // Function Prototypes
-void numberBoard(int arr[][3]);  // This function assigns the array a number for every place on the board 
+void numberBoard(char arr[][3]);  // This function assigns the array a number for every place on the board 
 void playerAnnouncement(int moves, string& player1, string& player2);  // Greeting at the begining of the game, announces player1's turn and player2's turn 
+void xMove(int& row, int& column);
+void oMove(int& row, int& column);
 void placeCheck(int playerMove, int moves);  // This function checks to see if player input is between (1-9) and to see if there is a piece already on the spot 
 
 
 int main()
 {
-    int gameBoard[3][3], playerMove = 0, i = 0, counter = 0;
+    char gameBoard[3][3];
+    int playerMove = 0, i = 0, counter = 0, row, column;
     string player1, player2;
-    bool winner = false;
+    bool winner = true;
     
     // Called function to number the game board 
     numberBoard(gameBoard);
@@ -26,31 +29,42 @@ int main()
     do {
 
         ++counter;
+
+        cout << gameBoard[0][0] << " | " << gameBoard[0][1] << " | " << gameBoard[0][2] << endl;
+        cout << "__________" << endl;
+        cout << gameBoard[1][0] << " | " << gameBoard[1][1] << " | " << gameBoard[1][2] << endl;
+        cout << "__________" << endl;
+        cout << gameBoard[2][0] << " | " << gameBoard[2][1] << " | " << gameBoard[2][2] << endl;
+
         playerAnnouncement(counter, player1, player2);
-
-        //visual board
-
-        cin >> playerMove;
+        if (counter % 2 == 1) 
+        {
+            xMove(row, column);
+        }
+        if (counter % 2 == 0) 
+        {
+            oMove(row, column);
+        }
         placeCheck(playerMove, counter);
 
 
-    } while (winner);
+    } while (!winner);
 
    
 }
 
 
-void numberBoard(int arr[][3]) 
+void numberBoard(char arr[][3]) 
 {
-    arr[0][0] = 1;
-    arr[0][1] = 2;
-    arr[0][2] = 3;
-    arr[1][0] = 4;
-    arr[1][1] = 5;
-    arr[1][2] = 6;
-    arr[2][0] = 7;
-    arr[1][1] = 8;
-    arr[2][2] = 9;
+    arr[0][0] = ' ';
+    arr[0][1] = ' ';
+    arr[0][2] = ' ';
+    arr[1][0] = ' ';
+    arr[1][1] = ' ';
+    arr[1][2] = ' ';
+    arr[2][0] = ' ';
+    arr[1][1] = ' ';
+    arr[2][2] = ' ';
 }
 
 
@@ -73,6 +87,20 @@ void playerAnnouncement(int moves, string& player1, string& player2)
     {
         cout << endl << player2 << "'s move: ";
     }
+
+}
+
+
+void xMove(int& row, int& column)
+{
+
+
+}
+
+
+void oMove(int& row, int& column)
+{
+
 
 }
 
