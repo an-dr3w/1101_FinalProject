@@ -22,12 +22,15 @@ int main()
     
     // Called function to number the game board 
     numberBoard(gameBoard);
+    do {
 
-    ++counter;
-    playerAnnouncement(counter, player1, player2);
-    cin >> playerMove;
-    placeCheck(playerMove, counter);
-    
+        ++counter;
+        playerAnnouncement(counter, player1, player2);
+        cin >> playerMove;
+        placeCheck(playerMove, counter);
+
+
+    } while (winner);
 
    
 }
