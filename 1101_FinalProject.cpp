@@ -6,14 +6,6 @@
 // we can use namespace just for now and add the "std::" to all the i/o commands after
 using namespace std;
 
-int main() 
-{
-    int number = 0;
-    number = 9 / 5;
-    cout << number;
-
-}
-
 
 // Global variable
 const int MAX_SIZE = 100;
