@@ -31,7 +31,7 @@ int main()
     char gameBoard[3][3];
     int  i = 0, counter = 1, row, column;
     string player1, player2;
-    bool winner = true, turn = false;
+    bool winner = false, turn = false;
     
     // Called function to number the game board 
     numberBoard(gameBoard);
@@ -57,7 +57,7 @@ int main()
                     gameBoard[row][column] == 'X';
                     turn = true;
                 }
-            } while (turn);
+            } while (turn != true);
             turn = false;
         }
 
@@ -72,14 +72,14 @@ int main()
                     gameBoard[row][column] == 'O';
                     turn = true;
                 }
-            } while (turn);
+            } while (turn != true);
             turn = false;
         }
         winnerCheck();
         counter++;
 
 
-    } while (!winner);
+    } while (winner != true);
 
    
 }
