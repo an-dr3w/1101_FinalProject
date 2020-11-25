@@ -67,7 +67,7 @@ int main()
             } while (turn != true);
             turn = false;
         }
-        //system("cls");
+        system("cls");
         winnerCheck(gameBoard, counter, winner, player1, player2);
         counter++;
 
@@ -213,18 +213,33 @@ void winnerCheck(char arr[][3], int counter, bool& winner, string player1, strin
     {
         if (winner == false) 
         {
-            cout << "Game Tied!";
+            cout << "Game Tied!" << endl 
+                 << arr[0][0] << " | " << arr[0][1] << " | " << arr[0][2] << endl;
+            cout << "__________" << endl;
+            cout << arr[1][0] << " | " << arr[1][1] << " | " << arr[1][2] << endl;
+            cout << "__________" << endl;
+            cout << arr[2][0] << " | " << arr[2][1] << " | " << arr[2][2] << endl;
         }
     }
     else if (winner == true) 
     {
         if (counter % 2 == 1) 
         {
-            cout << player1 << " WON!";
+            cout << player1 << " WON!" << endl
+                << arr[0][0] << " | " << arr[0][1] << " | " << arr[0][2] << endl;
+            cout << "__________" << endl;
+            cout << arr[1][0] << " | " << arr[1][1] << " | " << arr[1][2] << endl;
+            cout << "__________" << endl;
+            cout << arr[2][0] << " | " << arr[2][1] << " | " << arr[2][2] << endl;
         }
         if (counter % 2 == 0) 
         {
-            cout << player2 << " WON!";
+            cout << player2 << " WON!" << endl
+                << arr[0][0] << " | " << arr[0][1] << " | " << arr[0][2] << endl;
+            cout << "__________" << endl;
+            cout << arr[1][0] << " | " << arr[1][1] << " | " << arr[1][2] << endl;
+            cout << "__________" << endl;
+            cout << arr[2][0] << " | " << arr[2][1] << " | " << arr[2][2] << endl;
         }
     }
 
