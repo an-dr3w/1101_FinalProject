@@ -15,7 +15,7 @@ void numberBoard(char arr[][3]);  // This function assigns the array a number fo
 void playerAnnouncement(int moves, string& player1, string& player2);  // Greeting at the begining of the game, announces player1's turn and player2's turn 
 void playerMove(int& row, int& column);
 void placeCheck(int row, int column);  // This function checks to see if player input is between (1-9) and to see if there is a piece already on the spot 
-void winnerCheck(char arr[][3], int counter, bool winner, string player1, string player2);
+void winnerCheck(char arr[][3], int counter, bool& winner, string player1, string player2);
 
 
 int main()
@@ -133,43 +133,81 @@ void placeCheck(int row, int column)
 }
 
 
-void winnerCheck(char arr[][3], int counter, bool winner, string player1, string player2) 
+void winnerCheck(char arr[][3], int counter, bool& winner, string player1, string player2) 
 {
-    if (arr[0][0] && arr[0][1] && arr[0][2] == 'X' || 'O')
+    // Player1 winning argument 
+    if (arr[0][0] && arr[0][1] && arr[0][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[1][0] && arr[1][1] && arr[1][2] == 'X' || 'O')
+    else if (arr[1][0] && arr[1][1] && arr[1][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[2][0] && arr[2][1] && arr[2][2] == 'X' || 'O')
+    else if (arr[2][0] && arr[2][1] && arr[2][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][0] && arr[1][0] && arr[2][0] == 'X' || 'O')
+    else if (arr[0][0] && arr[1][0] && arr[2][0] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][1] && arr[1][1] && arr[2][1] == 'X' || 'O')
+    else if (arr[0][1] && arr[1][1] && arr[2][1] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][2] && arr[1][2] && arr[2][2] == 'X' || 'O')
+    else if (arr[0][2] && arr[1][2] && arr[2][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][0] && arr[1][1] && arr[2][2] == 'X' || 'O')
+    else if (arr[0][0] && arr[1][1] && arr[2][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][2] && arr[1][1] && arr[2][0] == 'X' || 'O')
+    else if (arr[0][2] && arr[1][1] && arr[2][0] == 'X')
     {
         winner = true;
     }
     else
         winner = false;
     
+    // Player2 winning argument 
+    if (arr[0][0] && arr[0][1] && arr[0][2] == 'O')
+    {
+        winner = true;
+    }
+    else if (arr[1][0] && arr[1][1] && arr[1][2] == 'O')
+    {
+        winner = true;
+    }
+    else if (arr[2][0] && arr[2][1] && arr[2][2] == 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][0] && arr[1][0] && arr[2][0] == 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][1] && arr[1][1] && arr[2][1] == 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][2] && arr[1][2] && arr[2][2] == 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][0] && arr[1][1] && arr[2][2] == 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][2] && arr[1][1] && arr[2][0] == 'O')
+    {
+        winner = true;
+    }
+    else
+        winner = false;
+
+    // Tied game argument and picking a winner 
     if(counter == 9)
     {
         if (winner == false) 
