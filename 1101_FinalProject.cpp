@@ -23,7 +23,7 @@ void numberBoard(char arr[][3]);  // This function assigns the array a number fo
 void playerAnnouncement(int moves, string& player1, string& player2);  // Greeting at the begining of the game, announces player1's turn and player2's turn 
 void playerMove(int& row, int& column);
 void placeCheck(int row, int column);  // This function checks to see if player input is between (1-9) and to see if there is a piece already on the spot 
-void winnerCheck();
+void winnerCheck(char arr[][3], int& counter, bool winner);
 
 
 int main()
@@ -75,7 +75,7 @@ int main()
             } while (turn != true);
             turn = false;
         }
-        winnerCheck();
+        winnerCheck(gameBoard, counter, winner);
         counter++;
 
 
@@ -142,9 +142,47 @@ void placeCheck(int row, int column)
 }
 
 
-void winnerCheck() 
+void winnerCheck(char arr[][3], int& counter, bool winner) 
 {
-    
+    if (arr[0][0] && arr[0][1] && arr[0][2] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else if (arr[1][0] && arr[1][1] && arr[1][2] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else if (arr[2][0] && arr[2][1] && arr[2][2] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][0] && arr[1][0] && arr[2][0] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][1] && arr[1][1] && arr[2][1] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][2] && arr[1][2] && arr[2][2] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][0] && arr[1][1] && arr[2][2] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else if (arr[0][2] && arr[1][1] && arr[2][0] == 'X' || 'O')
+    {
+        winner = true;
+    }
+    else
+        winner = false;
+
+    if(counter = 9 && winner = false)
+    {
+        cout << "Game Tied!";
+    }
 
 }
 
