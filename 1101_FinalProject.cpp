@@ -104,11 +104,11 @@ void playerAnnouncement(int moves, string& player1, string& player2)
 
     if (moves % 2 == 1) 
     {
-        cout << player1 << "'s move.\n";
+        cout << player1 << "'s move.\n" << endl;
     }
     if (moves % 2 == 0) 
     {
-        cout << player2 << "'s move.\n";
+        cout << player2 << "'s move.\n" << endl;
     }
 
 }
