@@ -233,8 +233,6 @@ int winnerCheck(char arr[][3], int counter, string player1, string player2)
             winner = 2;
         }
     }
-
-    cout << endl << winner << endl;
    
     // Tied game argument and picking a winner 
     if(counter == 9)
