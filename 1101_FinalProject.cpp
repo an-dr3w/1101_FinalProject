@@ -46,7 +46,7 @@ int main()
                 placeCheck(row, column);
                 if (gameBoard[row][column] == ' ')
                 {
-                    gameBoard[row][column] == 'X';
+                    gameBoard[row][column] = 'X';
                     turn = true;
                 }
             } while (turn != true);
@@ -61,12 +61,13 @@ int main()
                 placeCheck(row, column);
                 if (gameBoard[row][column] == ' ')
                 {
-                    gameBoard[row][column] == 'O';
+                    gameBoard[row][column] = 'O';
                     turn = true;
                 }
             } while (turn != true);
             turn = false;
         }
+        //system("cls");
         winnerCheck(gameBoard, counter, winner, player1, player2);
         counter++;
 
@@ -85,7 +86,7 @@ void numberBoard(char arr[][3])
     arr[1][1] = ' ';
     arr[1][2] = ' ';
     arr[2][0] = ' ';
-    arr[1][1] = ' ';
+    arr[2][1] = ' ';
     arr[2][2] = ' ';
 }
 
@@ -98,7 +99,7 @@ void playerAnnouncement(int moves, string& player1, string& player2)
         cin >> player1;
         cout << "\nPlayer2 enter your name: ";
         cin >> player2;
-        cout << "\nThank you, lets get started.\n";
+        cout << "\nThank you, lets get started.\n\n";
     }
 
     if (moves % 2 == 1) 
@@ -136,35 +137,35 @@ void placeCheck(int row, int column)
 void winnerCheck(char arr[][3], int counter, bool& winner, string player1, string player2) 
 {
     // Player1 winning argument 
-    if (arr[0][0] && arr[0][1] && arr[0][2] == 'X')
+    if (arr[0][0] == 'X' && arr[0][1] == 'X' && arr[0][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[1][0] && arr[1][1] && arr[1][2] == 'X')
+    else if (arr[1][0] == 'X' && arr[1][1] == 'X' && arr[1][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[2][0] && arr[2][1] && arr[2][2] == 'X')
+    else if (arr[2][0] == 'X' && arr[2][1] == 'X' && arr[2][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][0] && arr[1][0] && arr[2][0] == 'X')
+    else if (arr[0][0] == 'X' && arr[1][0] == 'X' && arr[2][0] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][1] && arr[1][1] && arr[2][1] == 'X')
+    else if (arr[0][1] == 'X' && arr[1][1] == 'X' && arr[2][1] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][2] && arr[1][2] && arr[2][2] == 'X')
+    else if (arr[0][2] == 'X' && arr[1][2] == 'X' && arr[2][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][0] && arr[1][1] && arr[2][2] == 'X')
+    else if (arr[0][0] == 'X' && arr[1][1] == 'X' && arr[2][2] == 'X')
     {
         winner = true;
     }
-    else if (arr[0][2] && arr[1][1] && arr[2][0] == 'X')
+    else if (arr[0][2] == 'X' && arr[1][1] == 'X' && arr[2][0] == 'X')
     {
         winner = true;
     }
@@ -172,35 +173,35 @@ void winnerCheck(char arr[][3], int counter, bool& winner, string player1, strin
         winner = false;
     
     // Player2 winning argument 
-    if (arr[0][0] && arr[0][1] && arr[0][2] == 'O')
+    if (arr[0][0] == 'O' && arr[0][1] == 'O' && arr[0][2] == 'O')
     {
         winner = true;
     }
-    else if (arr[1][0] && arr[1][1] && arr[1][2] == 'O')
+    else if (arr[1][0] == 'O' && arr[1][1] == 'O' && arr[1][2] == 'O')
     {
         winner = true;
     }
-    else if (arr[2][0] && arr[2][1] && arr[2][2] == 'O')
+    else if (arr[2][0] == 'O' && arr[2][1] == 'O' && arr[2][2] == 'O')
     {
         winner = true;
     }
-    else if (arr[0][0] && arr[1][0] && arr[2][0] == 'O')
+    else if (arr[0][0] == 'O' && arr[1][0] == 'O' && arr[2][0] == 'O')
     {
         winner = true;
     }
-    else if (arr[0][1] && arr[1][1] && arr[2][1] == 'O')
+    else if (arr[0][1] == 'O' && arr[1][1] == 'O' && arr[2][1] == 'O')
     {
         winner = true;
     }
-    else if (arr[0][2] && arr[1][2] && arr[2][2] == 'O')
+    else if (arr[0][2] == 'O' && arr[1][2] == 'O' && arr[2][2] == 'O')
     {
         winner = true;
     }
-    else if (arr[0][0] && arr[1][1] && arr[2][2] == 'O')
+    else if (arr[0][0] == 'O' && arr[1][1] == 'O' && arr[2][2] == 'O')
     {
         winner = true;
     }
-    else if (arr[0][2] && arr[1][1] && arr[2][0] == 'O')
+    else if (arr[0][2] == 'O' && arr[1][1] == 'O' && arr[2][0] == 'O')
     {
         winner = true;
     }
