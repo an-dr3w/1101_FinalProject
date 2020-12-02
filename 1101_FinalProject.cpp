@@ -1,4 +1,10 @@
-// 1101_FinalProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
+/*
+Group Members: Andrew Ochoa, Eric Gonzalez, Brandon Gonzalez, Arath Vela, Edwin Elizondo
+Class: 1101.91L
+Professor: Yessica Rodriguez
+
+Program Description: It is a 2 Player Tic-Tac-Toe game. 
+*/
 
 #include <iostream>
 #include <string>
@@ -32,11 +38,11 @@ int main()
         
         cout << "           Columns" << endl << endl;
         cout << "           0 " << "  1 " << "  2 " << endl;
-        cout << "       0   " << gameBoard[0][0] << " | " << gameBoard[0][1] << " | " << gameBoard[0][2] << endl;
+        cout << "        0  " << gameBoard[0][0] << " | " << gameBoard[0][1] << " | " << gameBoard[0][2] << endl;
         cout << "           __________" << endl;
-        cout << " Rows  1   " << gameBoard[1][0] << " | " << gameBoard[1][1] << " | " << gameBoard[1][2] << endl;
+        cout << " Rows   1  " << gameBoard[1][0] << " | " << gameBoard[1][1] << " | " << gameBoard[1][2] << endl;
         cout << "           __________" << endl;
-        cout << "       2   " << gameBoard[2][0] << " | " << gameBoard[2][1] << " | " << gameBoard[2][2] << endl << endl;
+        cout << "        2  " << gameBoard[2][0] << " | " << gameBoard[2][1] << " | " << gameBoard[2][2] << endl << endl;
         
 
         if (counter % 2 == 1)
@@ -102,9 +108,9 @@ void playerAnnouncement(int moves, string& player1, string& player2)
     // Welcoming announcement before first move. 
     if (moves == 1) 
     {
-        cout << "Welcome, to tic-tac-toe!\n" << "Player1 enter your name: ";
+        cout << "Welcome, to tic-tac-toe!\n\n" << "Player1 enter your name: ";
         cin >> player1;
-        cout << "\nPlayer2 enter your name: ";
+        cout << "Player2 enter your name: ";
         cin >> player2;
         cout << "\nThank you, lets get started.\n\n";
     }
@@ -114,11 +120,11 @@ void playerAnnouncement(int moves, string& player1, string& player2)
     {
         if (moves % 2 == 1)
         {
-            cout << player1 << "'s move.\n" << endl;
+            cout << endl << player1 << "'s move.\n" << endl;
         }
         if (moves % 2 == 0)
         {
-            cout << player2 << "'s move.\n" << endl;
+            cout << endl << player2 << "'s move.\n" << endl;
         }
     }
 }
@@ -127,10 +133,8 @@ void playerAnnouncement(int moves, string& player1, string& player2)
 
 void playerMove(int& row, int& column)
 {
-    cout << "Pick a row between [0-2]: ";
-    cin >> row;
-    cout << "\nPick a column between [0-2]: ";
-    cin >> column;
+    cout << "Pick a row then column between [0-2]: ";
+    cin >> row >> column;
     cout << endl;
 }
 
@@ -259,6 +263,8 @@ int winnerCheck(char arr[][3], int counter, string player1, string player2)
             cout << arr[1][0] << " | " << arr[1][1] << " | " << arr[1][2] << endl;
             cout << "__________" << endl;
             cout << arr[2][0] << " | " << arr[2][1] << " | " << arr[2][2] << endl;
+
+            winner = 3;
         }
     }
     
